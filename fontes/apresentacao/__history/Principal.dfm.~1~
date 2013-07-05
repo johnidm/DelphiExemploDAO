@@ -1,0 +1,37 @@
+object FrmPrincipal: TFrmPrincipal
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Desbravador'
+  ClientHeight = 189
+  ClientWidth = 666
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Button1: TButton
+    Left = 32
+    Top = 32
+    Width = 129
+    Height = 49
+    Caption = 'Cadastro de Clientes'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 328
+    Top = 32
+    Width = 225
+    Height = 89
+    Caption = 'ListView'
+    TabOrder = 1
+    OnClick = Button2Click
+  end
+end

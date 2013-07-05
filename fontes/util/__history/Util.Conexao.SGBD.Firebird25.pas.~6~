@@ -1,0 +1,49 @@
+{
+  Classe utilitária
+  Declara o objeto que representa a conexão com o DB Firebird 2.5
+}
+
+unit Util.Conexao.SGBD.Firebird25;
+
+interface
+
+uses
+  SqlExpr, SysUtils, Util.Conexao.ConectarDB;
+
+type
+  TUtilConexaoSGBDFirebird25 = class sealed
+  strict private
+    class var
+      _Conexao: TSQLConnection;
+  public
+    class function Instance(): TSQLConnection;
+  end;
+
+implementation
+
+
+{ TUtilConexaoSGBDFirebird25 }
+
+class function TUtilConexaoSGBDFirebird25.Instance: TSQLConnection;
+begin
+  if (not ( Assigned ( Conexao ) ) ) then
+  begin
+    Conexao:= TSQLConnection.Create( nil );
+
+    TUtilConexaoConectarDB.Conectar( Conexao );
+  end;
+
+  Result:= Conexao;
+end;
+
+
+initialization
+
+
+finalization
+  // Destroi o objeto Singleton da conexão
+  if ( Assigned ( TUtilConexaoSGBDFirebird25.Conexao )  ) then
+    FreeAndNil( TUtilConexaoSGBDFirebird25.Conexao )
+
+
+end.
