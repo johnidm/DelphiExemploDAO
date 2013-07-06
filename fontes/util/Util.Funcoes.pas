@@ -8,6 +8,9 @@ interface
 
   function Formatar( const ACurrency: Currency ): Currency; overload;
 
+  function Formatar( const ADouble: Double ): Double; overload;
+
+
 implementation
 
 
@@ -18,6 +21,11 @@ end;
 
 
 function Formatar( const AInteger: Integer ): Integer; overload;
+begin
+  //
+end;
+
+function Formatar( const ADouble: Double ): Double; overload;
 begin
   //
 end;
