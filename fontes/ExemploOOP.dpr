@@ -14,7 +14,8 @@ uses
   Util.Conexao.ConectarDB in 'util\Util.Conexao.ConectarDB.pas',
   Util.Conexao.Instancia.SQLDataSet in 'util\Util.Conexao.Instancia.SQLDataSet.pas',
   Util.Conexao.SGBD.Firebird.Singleton in 'util\Util.Conexao.SGBD.Firebird.Singleton.pas',
-  Util.Constantes in 'util\Util.Constantes.pas';
+  Util.Constantes in 'util\Util.Constantes.pas',
+  Util.Funcoes in 'util\Util.Funcoes.pas';
 
 {$R *.res}
 
