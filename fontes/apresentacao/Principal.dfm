@@ -3,9 +3,9 @@ object FrmPrincipal: TFrmPrincipal
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = 'Desbravador'
+  Caption = 'Exemplo Delphi DAO'
   ClientHeight = 297
-  ClientWidth = 524
+  ClientWidth = 303
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -26,8 +26,8 @@ object FrmPrincipal: TFrmPrincipal
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 368
-    Top = 8
+    Left = 8
+    Top = 80
     Width = 145
     Height = 57
     Caption = 'ListView'

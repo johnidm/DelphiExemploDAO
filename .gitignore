@@ -1,6 +1,14 @@
 # Arquivos gerados na compilação do Delphi
+
+*.dcu
 *.exe
+
 fontes/compilacao/*
 fontes/*.exe
 fontes/__history/*
+
+fontes/util/__history/*
+fontes/apresentacao/__history/*
+
+
 __history/*
