@@ -11,37 +11,69 @@ uses
   SqlExpr, SysUtils, Util.Conexao.ConectarDB;
 
 type
-  TUtilConexaoSGBDFirebirdSingleton = class sealed
-  private // não pode ser strict private
-    class var
-      _Conexao: TSQLConnection;
+  TConnFirebird = class sealed
+  private
+    class var FInstancia: TConnFirebird;
+
+  strict private
+    FSQLConnection: TSQLConnection;
+
+    class function GetInstancia: TConnFirebird; static;
+
   public
-    class function Instance(): TSQLConnection;
+    constructor Create();
+    destructor Destroy(); override;
+
+    property SQLConnection: TSQLConnection read FSQLConnection;
+
+    class property Instancia: TConnFirebird read GetInstancia;
   end;
 
 implementation
 
 
 
-class function TUtilConexaoSGBDFirebirdSingleton.Instance: TSQLConnection;
-begin
-  if (not ( Assigned ( _Conexao ) ) ) then
-  begin
-    _Conexao:= TSQLConnection.Create( nil );
+{ TConexaoFirebird }
 
-    TUtilConexaoConectarDB.Conectar( _Conexao );
+constructor TConnFirebird.Create();
+begin
+  FSQLConnection:= TSQLConnection.Create( nil );
+
+end;
+
+
+
+destructor TConnFirebird.Destroy;
+begin
+  if ( Assigned( FSQLConnection ) ) then
+  begin
+    if ( SQLConnection.Connected ) then
+      SQLConnection.Close();
+
+    FreeAndNil( FSQLConnection );
   end;
 
-  Result:= _Conexao;
+  inherited;
 end;
+
+
+
+class function TConnFirebird.GetInstancia: TConnFirebird;
+begin
+  if ( not ( Assigned ( FInstancia ) ) ) then
+    FInstancia:= TConnFirebird.Create();
+
+  Result:= FInstancia;
+end;
+
 
 
 initialization
 
 
 finalization
-  // Destroi o objeto Singleton da conexão
-  if ( Assigned ( TUtilConexaoSGBDFirebirdSingleton._Conexao )  ) then
-    FreeAndNil( TUtilConexaoSGBDFirebirdSingleton._Conexao )
+  if  ( Assigned( TConnFirebird.FInstancia ) ) then
+    FreeAndNil( TConnFirebird.FInstancia );
+
 
 end.

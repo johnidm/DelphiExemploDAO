@@ -38,7 +38,7 @@ begin
   if ( AComandoSQL = EmptyStr ) then
     raise EDAOErro.Create( RSComandoSQLNaoDefinido);
 
-  TConnFirebird.Instancia.SQLConnection.ExecuteDirect( AComandoSQL );
+  TUtilConexaoSGBDFirebirdSingleton.Instance.ExecuteDirect( AComandoSQL );
 end;
 
 

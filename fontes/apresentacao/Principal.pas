@@ -11,8 +11,10 @@ type
   TFrmPrincipal = class(TForm)
     Button1: TButton;
     Button2: TButton;
+    Button3: TButton;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,6 +39,11 @@ end;
 procedure TFrmPrincipal.Button2Click(Sender: TObject);
 begin
   TFrmListView.AbrirFormulario( );
+end;
+
+procedure TFrmPrincipal.Button3Click(Sender: TObject);
+begin
+  TConnFirebird.Instancia;
 end;
 
 end.

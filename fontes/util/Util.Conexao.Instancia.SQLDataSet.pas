@@ -27,7 +27,7 @@ begin
   Result:= TSQLDataSet.Create( nil );
 
   // Representa a conexao com os objetos
-  Result.SQLConnection:= TUtilConexaoSGBDFirebirdSingleton.Instance();
+  Result.SQLConnection:= TConnFirebird.Instancia.SQLConnection;
 end;
 
 end.

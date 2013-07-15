@@ -34,4 +34,13 @@ object FrmPrincipal: TFrmPrincipal
     TabOrder = 1
     OnClick = Button2Click
   end
+  object Button3: TButton
+    Left = 88
+    Top = 208
+    Width = 75
+    Height = 25
+    Caption = 'Button3'
+    TabOrder = 2
+    OnClick = Button3Click
+  end
 end
