@@ -15,7 +15,9 @@ uses
   Util.Conexao.Instancia.SQLDataSet in 'util\Util.Conexao.Instancia.SQLDataSet.pas',
   Util.Conexao.SGBD.Firebird.Singleton in 'util\Util.Conexao.SGBD.Firebird.Singleton.pas',
   Util.Constantes in 'util\Util.Constantes.pas',
-  Util.Funcoes in 'util\Util.Funcoes.pas';
+  Util.Funcoes in 'util\Util.Funcoes.pas',
+  Iterator.Select in 'framework\Iterator.Select.pas',
+  RegisterVariable.ConnDB in 'framework\RegisterVariable.ConnDB.pas';
 
 {$R *.res}
 

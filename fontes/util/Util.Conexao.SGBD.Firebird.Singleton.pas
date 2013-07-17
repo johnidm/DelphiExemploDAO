@@ -11,7 +11,7 @@ uses
   SqlExpr, SysUtils, Util.Conexao.ConectarDB;
 
 type
-  TConnFirebird = class sealed
+  TConnFirebird = class sealed  // classe não deve ser herdada
   private
     class var FInstancia: TConnFirebird;
 
@@ -20,10 +20,10 @@ type
 
     class function GetInstancia: TConnFirebird; static;
 
-  public
     constructor Create();
     destructor Destroy(); override;
 
+  public
     property SQLConnection: TSQLConnection read FSQLConnection;
 
     class property Instancia: TConnFirebird read GetInstancia;
@@ -65,7 +65,6 @@ begin
 
   Result:= FInstancia;
 end;
-
 
 
 initialization
