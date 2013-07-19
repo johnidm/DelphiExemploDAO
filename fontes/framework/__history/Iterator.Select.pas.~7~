@@ -86,12 +86,10 @@ begin
 end;
 
 
-
 class function TIteratorSelect.Iterator( const ACommandSelect: string ): IIteratorSelect;
 begin
   Result:= TIteratorSelect.Create( ACommandSelect );
 end;
-
 
 
 function TIteratorSelect.NextEof: Boolean;
@@ -108,5 +106,11 @@ begin
 end;
 
 
+initialization
+
+
+
+finalization
+  
 
 end.

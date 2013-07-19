@@ -10,20 +10,24 @@ interface
 uses
   SqlExpr, Util.Constantes;
 type
-  TUtilConexaoConectarDB = class
+  TConnConectDB = class
   strict private
     const
       DB_SENHA = 'masterkey';
       DB_USER = 'SYSDBA';
+
+      DATABASE = 'F:\UsoDeObjetos\dados.fdb';
+      //DIR_APLICACAO + 'dados.fdb';
+
   public
-    class procedure Conectar( ASQLConnection: TSQLConnection );
+    class procedure Connect( ASQLConnection: TSQLConnection );
   end;
 
 implementation
 
 { TUtilConexaoConectarDB }
 
-class procedure TUtilConexaoConectarDB.Conectar(ASQLConnection: TSQLConnection);
+class procedure TConnConectDB.Connect(ASQLConnection: TSQLConnection);
 begin
   if (ASQLConnection.Connected) then
     ASQLConnection.Close;
@@ -35,7 +39,7 @@ begin
 
   with ASQLConnection.Params do
   begin
-    Values['Database'] := DIR_APLICACAO + 'dados.fdb';
+    Values['Database'] := DATABASE;
 
     Values['Password'] := DB_SENHA;
     Values['User_Name'] := DB_USER;

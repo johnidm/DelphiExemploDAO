@@ -54,7 +54,6 @@ begin
 
   with ( IIteratorSelect( TIteratorSelect.Iterator( SQL ) ) )  do
   begin
-
     while ( NextEof() ) do
     begin
       Cliente := TVOCliente.Create();
@@ -118,6 +117,7 @@ begin
       '  WHERE              ' +
       '      id_cliente = ' + IntToStr(AVOCliente.ID)
     );
+
 end;
 
 

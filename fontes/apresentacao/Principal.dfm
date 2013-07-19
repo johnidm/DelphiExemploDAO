@@ -42,7 +42,6 @@ object FrmPrincipal: TFrmPrincipal
     Height = 25
     Caption = 'Button3'
     TabOrder = 2
-    OnClick = Button3Click
   end
   object Button4: TButton
     Left = 200
@@ -51,28 +50,5 @@ object FrmPrincipal: TFrmPrincipal
     Height = 25
     Caption = 'Button4'
     TabOrder = 3
-    OnClick = Button4Click
-  end
-  object SQLConnection1: TSQLConnection
-    ConnectionName = 'FBConnection'
-    DriverName = 'Firebird'
-    KeepConnection = False
-    Params.Strings = (
-      'DriverName=Firebird'
-      'Database=F:\UsoDeObjetos\dados.fdb'
-      'RoleName=RoleName'
-      'User_Name=sysdba'
-      'Password=masterkey'
-      'ServerCharSet='
-      'SQLDialect=3'
-      'ErrorResourceFile='
-      'LocaleCode=0000'
-      'BlobSize=-1'
-      'CommitRetain=False'
-      'WaitOnLocks=True'
-      'IsolationLevel=ReadCommitted'
-      'Trim Char=False')
-    Left = 192
-    Top = 128
   end
 end

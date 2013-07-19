@@ -54,7 +54,6 @@ begin
 
   with ( IIteratorSelect( TIteratorSelect.Iterator( SQL ) ) )  do
   begin
-
     while ( NextEof() ) do
     begin
       Cliente := TVOCliente.Create();
@@ -98,7 +97,16 @@ end;
 
 procedure TDAOCliente.Salvar(const AVOCliente: TVOCliente);
 begin
-  if ( IIteratorSelect( TIteratorSelect.Iterator( 'select 1 from CLIENTES where id_cliente =  ' + IntToStr( AVOCliente.ID ) ) ) ).IsEmpty then
+
+
+  if (AVOCliente.ID > 0) then
+    ExecutarComandoSQL(
+      'UPDATE CLIENTES SET ' +
+      '      nm_cliente = ' + QuotedStr(AVOCliente.Nome) +
+      '  WHERE              ' +
+      '      id_cliente = ' + IntToStr(AVOCliente.ID)
+    )
+  else
     ExecutarComandoSQL(
       ' INSERT INTO CLIENTES( ' +
       '     id_cliente,     ' +
@@ -110,13 +118,6 @@ begin
             QuotedStr ('today') +
 
       ' ) '
-    )
-  else
-    ExecutarComandoSQL(
-      'UPDATE CLIENTES SET ' +
-      '      nm_cliente = ' + QuotedStr(AVOCliente.Nome) +
-      '  WHERE              ' +
-      '      id_cliente = ' + IntToStr(AVOCliente.ID)
     );
 end;
 

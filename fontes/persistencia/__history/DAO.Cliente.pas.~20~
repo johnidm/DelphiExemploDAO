@@ -54,7 +54,6 @@ begin
 
   with ( IIteratorSelect( TIteratorSelect.Iterator( SQL ) ) )  do
   begin
-
     while ( NextEof() ) do
     begin
       Cliente := TVOCliente.Create();

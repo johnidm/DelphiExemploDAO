@@ -7,4 +7,31 @@
     <Transaction>2013/07/16 23:17:24.000.170,F:\DelphiExemploDAO\fontes\Unit1.pas=F:\DelphiExemploDAO\fontes\framework\Unit1.pas</Transaction>
     <Transaction>2013/07/16 23:36:58.000.012,F:\DelphiExemploDAO\fontes\framework\Unit1.pas=F:\DelphiExemploDAO\fontes\framework\RegisterVariable.ConnDB.pas</Transaction>
   </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="apresentacao"/>
+    <File Path="apresentacao\CadastroDeClientes.pas"/>
+    <File Path="apresentacao\CadastroDeClientes.dfm"/>
+    <File Path="apresentacao\ListView.pas"/>
+    <File Path="apresentacao\ListView.dfm"/>
+    <File Path="apresentacao\PesquisarClientes.pas"/>
+    <File Path="apresentacao\PesquisarClientes.dfm"/>
+    <File Path="apresentacao\Principal.pas"/>
+    <File Path="apresentacao\Principal.dfm"/>
+    <File Path="framework"/>
+    <File Path="framework\Iterator.Select.pas"/>
+    <File Path="framework\RegisterVariable.ConnDB.pas"/>
+    <File Path="negocio"/>
+    <File Path="negocio\BO.Exportar.Clientes.Leiaute.pas"/>
+    <File Path="negocio\BO.Exportar.Clientes.pas"/>
+    <File Path="persistencia"/>
+    <File Path="persistencia\DAO.Base.pas"/>
+    <File Path="persistencia\DAO.Cliente.pas"/>
+    <File Path="persistencia\VO.Cliente.pas"/>
+    <File Path="util"/>
+    <File Path="util\Util.Conexao.ConectarDB.pas"/>
+    <File Path="util\Util.Conexao.Instancia.SQLDataSet.pas"/>
+    <File Path="util\Util.Conexao.SGBD.Firebird.Singleton.pas"/>
+    <File Path="util\Util.Constantes.pas"/>
+    <File Path="util\Util.Funcoes.pas"/>
+  </ProjectSortOrder>
 </BorlandProject>

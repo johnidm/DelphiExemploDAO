@@ -5,11 +5,9 @@ interface
   function Formatar( const AString: string ): string; overload
   function Formatar( const AInteger: Integer ): Integer; overload;
 
-
   function Formatar( const ACurrency: Currency ): Currency; overload;
 
   function Formatar( const ADouble: Double ): Double; overload;
-
 
 implementation
 

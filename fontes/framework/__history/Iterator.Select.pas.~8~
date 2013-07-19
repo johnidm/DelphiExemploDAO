@@ -93,7 +93,6 @@ begin
 end;
 
 
-
 function TIteratorSelect.NextEof: Boolean;
 begin
 
@@ -108,5 +107,11 @@ begin
 end;
 
 
+initialization
+
+
+
+finalization
+  
 
 end.

@@ -1,3 +1,5 @@
+
+
 unit RegisterVariable.ConnDB;
 
 interface
@@ -31,7 +33,6 @@ class procedure TRegisterVariable.Register(const AConnDB: TSQLConnection);
 begin
   FConnDB:= AConnDB;
 end;
-
 
 
 end.

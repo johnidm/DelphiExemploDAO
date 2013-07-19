@@ -72,12 +72,10 @@ begin
 end;
 
 
-
 function TIteratorSelect.GetSQLDataSet: TSQLDataSet;
 begin
   Result:= SQLDataSet;
 end;
-
 
 
 function TIteratorSelect.IsEmpty: Boolean;
@@ -86,12 +84,10 @@ begin
 end;
 
 
-
 class function TIteratorSelect.Iterator( const ACommandSelect: string ): IIteratorSelect;
 begin
   Result:= TIteratorSelect.Create( ACommandSelect );
 end;
-
 
 
 function TIteratorSelect.NextEof: Boolean;
@@ -108,5 +104,11 @@ begin
 end;
 
 
+initialization
+
+
+
+finalization
+  
 
 end.
