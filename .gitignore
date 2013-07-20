@@ -3,6 +3,7 @@
 *.dcu
 *.exe
 
+
 fontes/compilacao/*
 fontes/*.exe
 fontes/__history/*
