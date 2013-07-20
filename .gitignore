@@ -3,9 +3,15 @@
 *.dcu
 *.exe
 
+*/__history/*
+
+
+__history/*
+
+fontes/*/*.dcu
 
 fontes/compilacao/*
-fontes/*.exe
+
 fontes/__history/*
 
 fontes/util/__history/*
@@ -15,4 +21,3 @@ fontes/ExemploOOP.dproj.localgit add
 fontes/ExemploOOP.identcache
 
 
-__history/*
