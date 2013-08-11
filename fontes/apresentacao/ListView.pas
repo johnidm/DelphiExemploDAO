@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, DAO.Cliente, VO.Cliente, CadastroDeClientes,
+  Dialogs, StdCtrls, Buttons, DAO.Cliente, Model.Cliente, CadastroDeClientes,
   BO.Exportar.Clientes;
 
 type
@@ -54,8 +54,8 @@ end;
 procedure TFrmListView.AtualizarListaDeClientes;
 var
   DAOCliente: TDAOCliente;
-  Clientes: TVOClienteLista;
-  Cliente: TVOCliente;
+  Clientes: TModelListaCliente;
+  Cliente: TModelCliente;
 begin
   // Popula o ClientDataSet com a lista de clientes
   DAOCliente := TDAOCliente.Create();
@@ -99,7 +99,7 @@ procedure TFrmListView.BitBtn2Click(Sender: TObject);
 begin
   if ( ListBox1.ItemIndex >= 0 ) then
   begin
-    TFrmCadastroDeClientes.CadastrarCliente( TVOCliente( ListBox1.Items.Objects[ ListBox1.ItemIndex ] ).ID );
+    TFrmCadastroDeClientes.CadastrarCliente( TModelCliente( ListBox1.Items.Objects[ ListBox1.ItemIndex ] ).ID );
 
     AtualizarListaDeClientes();
   end;
@@ -116,7 +116,7 @@ begin
 
     DAOCliente:= TDAOCliente.Create();
     try
-      DAOCliente.Excluir( TVOCliente( ListBox1.Items.Objects[ ListBox1.ItemIndex ] ) );
+      DAOCliente.Excluir( TModelCliente( ListBox1.Items.Objects[ ListBox1.ItemIndex ] ) );
 
       AtualizarListaDeClientes();
     finally
@@ -131,7 +131,7 @@ end;
 procedure TFrmListView.BitBtn5Click(Sender: TObject);
 var
   DAOCliente: TDAOCliente;
-  Clientes: TVOClienteLista;
+  Clientes: TModelListaCliente;
 
 begin
   DAOCliente := TDAOCliente.Create();

@@ -8,7 +8,7 @@ unit BO.Exportar.Clientes.Leiaute;
 interface
 
 uses
-  VO.Cliente,
+  Model.Cliente,
   Classes,
   SysUtils, Util.Constantes;
 
@@ -19,7 +19,7 @@ type
 
   IVersaoLeiaute = interface
     ['{C3EAE1A9-8E45-47C2-B51D-4140708F7D95}']
-    procedure Exportar( const AClientes: TVOClienteLista );
+    procedure Exportar( const AClientes: TModelListaCliente );
   end;
 
   // Classe base dos leiautes
@@ -31,7 +31,7 @@ type
 
   TVersaoBlocado = class( TVersao , IVersaoLeiaute )
   public
-    procedure Exportar( const AClientes: TVOClienteLista );
+    procedure Exportar( const AClientes: TModelListaCliente );
   end;
 
 
@@ -39,7 +39,7 @@ type
   private
     const CARACTERE_SEPARADOR = ':';
   public
-    procedure Exportar( const AClientes: TVOClienteLista );
+    procedure Exportar( const AClientes: TModelListaCliente );
   end;
 
   // Fábrica de leiaute
@@ -54,13 +54,13 @@ implementation
 
 { TVersaoBlocado }
 
-procedure TVersaoBlocado.Exportar(const AClientes: TVOClienteLista);
+procedure TVersaoBlocado.Exportar(const AClientes: TModelListaCliente);
 const
   ARQUIVO = 'versao_blocado.txt' ;
 
 var
   StringList: TStringList;
-  Cliente: TVOCliente;
+  Cliente: TModelCliente;
 begin
   StringList:= TStringList.Create;
   try
@@ -84,13 +84,13 @@ end;
 
 { TVersaoCaractereSeparador }
 
-procedure TVersaoCaractereSeparador.Exportar(const AClientes: TVOClienteLista);
+procedure TVersaoCaractereSeparador.Exportar(const AClientes: TModelListaCliente);
 const
   ARQUIVO = 'versao_caractere_separador.txt';
 
 var
   StringList: TStringList;
-  Cliente: TVOCliente;
+  Cliente: TModelCliente;
 begin
   StringList:= TStringList.Create;
   try

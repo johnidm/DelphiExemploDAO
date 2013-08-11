@@ -1,4 +1,4 @@
-unit Iterator.Select;
+unit Iterator.SQL.Select;
 
 interface
 
@@ -7,14 +7,14 @@ uses
   System.SysUtils, Data.DB, System.Classes;
 
 type
-  IIteratorSelect = interface
+  IIteratorSQLSelect = interface
     ['{96CAECD5-3A85-4643-A991-3678CB56DBF4}']
     function IsEmpty(): Boolean;
     function NextEof(): Boolean;
     function Field( const AFieldName: string ): TField;
   end;
 
-  TIteratorSelect = class( TInterfacedObject, IIteratorSelect )
+  TIteratorSQLSelect = class( TInterfacedObject, IIteratorSQLSelect )
   strict private
     SQLDataSet: TSQLDataSet;
     CanNextRecord: Boolean;
@@ -23,7 +23,6 @@ type
 
     constructor Create( const ASQL: string );
     destructor Destroy(); override;
-
   public
     property DataSet: TSQLDataSet read GetSQLDataSet;
 
@@ -31,7 +30,7 @@ type
     function NextEof(): Boolean;
     function Field( const AFieldName: string ): TField;
 
-    class function Iterator( const ACommandSelect: string ): IIteratorSelect;
+    class function Iterator( const ACommandSelect: string ): IIteratorSQLSelect;
   end;
 
 implementation
@@ -41,7 +40,7 @@ implementation
 uses RegisterVariable.ConnDB;
 
 
-constructor TIteratorSelect.Create(const ASQL: string);
+constructor TIteratorSQLSelect.Create(const ASQL: string);
 begin
   SQLDataSet:= TSQLDataSet.Create( nil );
   SQLDataSet.CommandText:= ASQL;
@@ -56,7 +55,7 @@ end;
 
 
 
-destructor TIteratorSelect.Destroy;
+destructor TIteratorSQLSelect.Destroy;
 begin
   if ( Assigned( SQLDataSet ) ) then
     FreeAndNil( SQLDataSet );
@@ -66,35 +65,35 @@ end;
 
 
 
-function TIteratorSelect.Field( const AFieldName: string ): TField;
+function TIteratorSQLSelect.Field( const AFieldName: string ): TField;
 begin
   Result:= SQLDataSet.Fields.FieldByName( AFieldName )
 end;
 
 
 
-function TIteratorSelect.GetSQLDataSet: TSQLDataSet;
+function TIteratorSQLSelect.GetSQLDataSet: TSQLDataSet;
 begin
   Result:= SQLDataSet;
 end;
 
 
 
-function TIteratorSelect.IsEmpty: Boolean;
+function TIteratorSQLSelect.IsEmpty: Boolean;
 begin
   Result:= SQLDataSet.IsEmpty;
 end;
 
 
 
-class function TIteratorSelect.Iterator( const ACommandSelect: string ): IIteratorSelect;
+class function TIteratorSQLSelect.Iterator( const ACommandSelect: string ): IIteratorSQLSelect;
 begin
-  Result:= TIteratorSelect.Create( ACommandSelect );
+  Result:= TIteratorSQLSelect.Create( ACommandSelect );
 end;
 
 
 
-function TIteratorSelect.NextEof: Boolean;
+function TIteratorSQLSelect.NextEof: Boolean;
 begin
 
   if ( CanNextRecord ) then

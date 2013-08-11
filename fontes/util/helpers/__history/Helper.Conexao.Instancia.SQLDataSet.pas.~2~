@@ -1,0 +1,33 @@
+{
+  Classe utilitária
+  Declara métodos para instância de objetos que executam SQLs no DB
+}
+
+unit Helper.Conexao.Instancia.SQLDataSet;
+
+interface
+
+uses
+  Util.Conexao.SGBD.Firebird.Singleton,
+  SqlExpr;
+
+type
+  TUtilConexaoInstanciaSQLDataSet = class sealed
+  public
+    class function Instancia(): TSQLDataSet;
+  end;
+
+
+implementation
+
+{ TUtilConexaoInstanciaSQLDataSet }
+
+class function TUtilConexaoInstanciaSQLDataSet.Instancia: TSQLDataSet;
+begin
+  Result:= TSQLDataSet.Create( nil );
+
+  // Representa a conexao com os objetos
+  Result.SQLConnection:= TConnFirebird.Instancia.SQLConnection;
+end;
+
+end.

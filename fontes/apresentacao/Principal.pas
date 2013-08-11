@@ -11,8 +11,6 @@ type
   TFrmPrincipal = class(TForm)
     Button1: TButton;
     Button2: TButton;
-    Button3: TButton;
-    Button4: TButton;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -27,8 +25,8 @@ var
 
 implementation
 
-uses Util.Conexao.SGBD.Firebird.Singleton, RegisterVariable.ConnDB ,
-  Util.Conexao.Instancia.SQLDataSet, Iterator.Select, Util.Conexao.ConectarDB;
+uses Helper.Conexao.SGBD.Firebird.Singleton, RegisterVariable.ConnDB ,
+  Helper.Conexao.Instancia.SQLDataSet, Iterator.SQL.Select, Helper.Conexao.ConectarDB;
 
 {$R *.dfm}
 
@@ -46,7 +44,7 @@ end;
 procedure TFrmPrincipal.FormCreate(Sender: TObject);
 var
   SQL: string;
-  Campo: string;
+
 begin
   // Define o objeto que ira representar a conexão com o DB
   TRegisterVariable.Register( {SQLConnection1} TConnFirebird.Instancia.SQLConnection );
@@ -56,7 +54,8 @@ begin
 
   SQL:= ' select CAMPO1 from TABELA where CODIGO = 1';
 
-  Campo:= IIteratorSelect( TIteratorSelect.Iterator( SQL ) ).Field('CAMPO1').AsString;
+  (*
+  Campo:= IIteratorSQLSelect( TIteratorSQLSelect.Iterator( SQL ) ).Field('CAMPO1').AsString;
   ShowMessage( Campo );
 
   SQL:= ' select CAMPO1 from TABELA ';
@@ -68,6 +67,7 @@ begin
         Field( 'CAMPO1' ).AsString );
     end;
   end;
+  *)
 
 end;
 

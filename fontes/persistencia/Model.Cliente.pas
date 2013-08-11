@@ -3,7 +3,7 @@
   VO da entidade cliente
 }
 
-unit VO.Cliente;
+unit Model.Cliente;
 
 interface
 
@@ -11,7 +11,7 @@ uses
   Generics.Collections;
 
 type
-  TVOCliente = class
+  TModelCliente = class
   private
     FID: Integer;
     FNome: string;
@@ -20,7 +20,7 @@ type
     property Nome: string read FNome write FNome;
   end;
 
-  TVOClienteLista = class(TObjectList< TVOCliente >)
+  TModelListaCliente = class(TObjectList< TModelCliente >)
   end;
 
 implementation

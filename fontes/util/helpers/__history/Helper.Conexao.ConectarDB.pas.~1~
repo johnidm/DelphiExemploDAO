@@ -16,7 +16,7 @@ type
       DB_SENHA = 'masterkey';
       DB_USER = 'SYSDBA';
 
-      DATABASE = 'F:\UsoDeObjetos\dados.fdb';
+      DATABASE = 'F:\DelphiExemploDAO\compilacao\dados.fdb';
       //DIR_APLICACAO + 'dados.fdb';
 
   public

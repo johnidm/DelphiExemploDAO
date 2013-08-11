@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, DAO.Cliente, DB, StdCtrls, Buttons, DBClient, Grids, DBGrids,
-  ExtCtrls, VO.Cliente;
+  ExtCtrls, Model.Cliente;
 
 type
   TFrmPesquisarClientes = class(TForm)
@@ -80,8 +80,8 @@ end;
 procedure TFrmPesquisarClientes.FormCreate(Sender: TObject);
 var
   DAOCliente: TDAOCliente;
-  Clientes: TVOClienteLista;
-  Cliente: TVOCliente;
+  Clientes: TModelListaCliente;
+  Cliente: TModelCliente;
 begin
   // Popula o ClientDataSet com a lista de clientes
   DAOCliente := TDAOCliente.Create();

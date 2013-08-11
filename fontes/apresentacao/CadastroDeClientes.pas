@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, ExtCtrls, VO.Cliente, DAO.Cliente,
+  Dialogs, StdCtrls, Buttons, ExtCtrls, Model.Cliente, DAO.Cliente,
   PesquisarClientes;
 
 type
@@ -49,10 +49,10 @@ end;
 
 procedure TFrmCadastroDeClientes.BtnExcluirClick(Sender: TObject);
 var
-  Cliente: TVOCliente;
+  Cliente: TModelCliente;
   DAOCliente: TDAOCliente;
 begin
-  Cliente := TVOCliente.Create();
+  Cliente := TModelCliente.Create();
   try
     DAOCliente := TDAOCliente.Create();
     try
@@ -82,7 +82,7 @@ end;
 
 procedure TFrmCadastroDeClientes.BtnSalvarClick(Sender: TObject);
 var
-  Cliente: TVOCliente;
+  Cliente: TModelCliente;
   DAOCliente: TDAOCliente;
 begin
   // Somente para evitar o cadastro do nome em branco.
@@ -95,7 +95,7 @@ begin
     Exit;
   end;
          
-  Cliente := TVOCliente.Create;
+  Cliente := TModelCliente.Create;
   try
     DAOCliente := TDAOCliente.Create();
     try
@@ -157,7 +157,7 @@ procedure TFrmCadastroDeClientes.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 var
   DAOCliente: TDAOCliente;
-  Cliente: TVOCliente;
+  Cliente: TModelCliente;
 begin
   if (Key = 13) then
   begin

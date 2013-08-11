@@ -27,28 +27,12 @@ object FrmPrincipal: TFrmPrincipal
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 8
-    Top = 80
+    Left = 128
+    Top = 152
     Width = 145
     Height = 57
     Caption = 'ListView'
     TabOrder = 1
     OnClick = Button2Click
-  end
-  object Button3: TButton
-    Left = 40
-    Top = 176
-    Width = 75
-    Height = 25
-    Caption = 'Button3'
-    TabOrder = 2
-  end
-  object Button4: TButton
-    Left = 200
-    Top = 56
-    Width = 75
-    Height = 25
-    Caption = 'Button4'
-    TabOrder = 3
   end
 end

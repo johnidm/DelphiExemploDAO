@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions/>
-  <Default.Personality>
-    <Projects ActiveProject="F:\DelphiExemploDAO\fontes\OOP.dproj"/>
-  </Default.Personality>
+	<Transactions>
+    <Transaction>2013/07/19 21:58:16.000.386,F:\DelphiExemploDAO\fontes\OOPExemplo.groupproj=C:\Users\VM_WIN7\Documents\RAD Studio\Projects\ProjectGroup1.groupproj</Transaction>
+    <Transaction>2013/07/19 21:59:14.000.530,F:\DelphiExemploDAO\fontes\OOP.groupproj=F:\DelphiExemploDAO\fontes\OOPExemplo.groupproj</Transaction>
+  </Transactions>
+	<Default.Personality>
+		<Projects ActiveProject="F:\DelphiExemploDAO\fontes\test\OOPTests.dproj"/>
+	</Default.Personality>
 </BorlandProject>

@@ -6,8 +6,26 @@
     <Transaction>2013/07/16 23:15:41.000.869,=F:\DelphiExemploDAO\fontes\Unit1.pas</Transaction>
     <Transaction>2013/07/16 23:17:24.000.170,F:\DelphiExemploDAO\fontes\framework\Unit1.pas=F:\DelphiExemploDAO\fontes\Unit1.pas</Transaction>
     <Transaction>2013/07/16 23:36:58.000.012,F:\DelphiExemploDAO\fontes\framework\RegisterVariable.ConnDB.pas=F:\DelphiExemploDAO\fontes\framework\Unit1.pas</Transaction>
-    <Transaction>2013/07/19 21:58:05.082,F:\DelphiExemploDAO\fontes\OOP.dproj=F:\DelphiExemploDAO\fontes\ExemploOOP.dproj</Transaction>
-    <Transaction>2013/07/19 21:59:09.858,F:\DelphiExemploDAO\fontes\OOPProject.dproj=F:\DelphiExemploDAO\fontes\OOP.dproj</Transaction>
+    <Transaction>2013/07/19 21:58:05.000.082,F:\DelphiExemploDAO\fontes\OOP.dproj=F:\DelphiExemploDAO\fontes\ExemploOOP.dproj</Transaction>
+    <Transaction>2013/07/19 21:59:09.000.858,F:\DelphiExemploDAO\fontes\OOPProject.dproj=F:\DelphiExemploDAO\fontes\OOP.dproj</Transaction>
+    <Transaction>2013/07/25 21:40:31.000.653,F:\DelphiExemploDAO\fontes\persistencia\VO.Cliente.pas=F:\DelphiExemploDAO\fontes\persistencia\Model.Cliente.pas</Transaction>
+    <Transaction>2013/08/10 17:36:56.000.976,=F:\DelphiExemploDAO\fontes\Unit1.pas</Transaction>
+    <Transaction>2013/08/10 17:37:22.000.886,F:\DelphiExemploDAO\fontes\Unit1.pas=F:\DelphiExemploDAO\fontes\util\Util.RS.pas</Transaction>
+    <Transaction>2013/08/10 17:43:27.000.278,F:\DelphiExemploDAO\fontes\framework\Iterator.Select.pas=F:\DelphiExemploDAO\fontes\framework\Iterator.SQL.Select.pas</Transaction>
+    <Transaction>2013/08/10 17:47:43.000.880,=F:\DelphiExemploDAO\fontes\Unit1.pas</Transaction>
+    <Transaction>2013/08/10 17:47:55.000.800,F:\DelphiExemploDAO\fontes\Unit1.pas=F:\DelphiExemploDAO\fontes\framework\Builder.SQL.DML.pas</Transaction>
+    <Transaction>2013/08/10 23:39:16.000.727,=F:\DelphiExemploDAO\fontes\Unit1.pas</Transaction>
+    <Transaction>2013/08/10 23:39:29.000.988,F:\DelphiExemploDAO\fontes\Unit1.pas=F:\DelphiExemploDAO\fontes\framework\Parse.Params.pas</Transaction>
+    <Transaction>2013/08/11 10:39:36.000.631,F:\DelphiExemploDAO\fontes\framework\Parse.Params.pas=F:\DelphiExemploDAO\fontes\framework\Parse.SQL.Params.pas</Transaction>
+    <Transaction>2013/08/11 16:12:12.000.451,=F:\DelphiExemploDAO\fontes\Unit1.pas</Transaction>
+    <Transaction>2013/08/11 16:12:21.000.144,F:\DelphiExemploDAO\fontes\Unit1.pas=F:\DelphiExemploDAO\fontes\util\Util.Types.pas</Transaction>
+    <Transaction>2013/08/11 16:20:50.000.860,=F:\DelphiExemploDAO\fontes\Unit1.pas</Transaction>
+    <Transaction>2013/08/11 16:21:03.000.211,F:\DelphiExemploDAO\fontes\Unit1.pas=F:\DelphiExemploDAO\fontes\framework\Parse.SQL_Fields.pas</Transaction>
+    <Transaction>2013/08/11 16:21:25.000.372,F:\DelphiExemploDAO\fontes\framework\Parse.SQL_Fields.pas=F:\DelphiExemploDAO\fontes\framework\Parse.SQL.Fields.pas</Transaction>
+    <Transaction>2013/08/11 16:35:55.000.812,F:\DelphiExemploDAO\fontes\framework\Parse.SQL.Fields.pas=F:\DelphiExemploDAO\fontes\framework\Parse.SQL.pas</Transaction>
+    <Transaction>2013/08/11 20:42:25.114,F:\DelphiExemploDAO\fontes\util\helpers\Helper.Conexao.ConectarDB.pas=F:\DelphiExemploDAO\fontes\util\helpers\Util.Conexao.ConectarDB.pas</Transaction>
+    <Transaction>2013/08/11 20:42:33.511,F:\DelphiExemploDAO\fontes\util\helpers\Helper.Conexao.Instancia.SQLDataSet.pas=F:\DelphiExemploDAO\fontes\util\helpers\Util.Conexao.Instancia.SQLDataSet.pas</Transaction>
+    <Transaction>2013/08/11 20:43:00.598,F:\DelphiExemploDAO\fontes\util\helpers\Helper.Conexao.SGBD.Firebird.Singleton.pas=F:\DelphiExemploDAO\fontes\util\helpers\Util.Conexao.SGBD.Firebird.Singleton.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="apresentacao"/>
@@ -20,20 +38,27 @@
     <File Path="apresentacao\Principal.pas"/>
     <File Path="apresentacao\Principal.dfm"/>
     <File Path="framework"/>
-    <File Path="framework\Iterator.Select.pas"/>
-    <File Path="framework\RegisterVariable.ConnDB.pas"/>
+    <File Path="framework\SQL"/>
+    <File Path="framework\SQL\Builder.SQL.DML.pas"/>
+    <File Path="framework\SQL\Iterator.SQL.Select.pas"/>
+    <File Path="framework\SQL\Parse.SQL.Params.pas"/>
+    <File Path="framework\SQL\Parse.SQL.pas"/>
+    <File Path="framework\SQL\RegisterVariable.ConnDB.pas"/>
     <File Path="negocio"/>
     <File Path="negocio\BO.Exportar.Clientes.Leiaute.pas"/>
     <File Path="negocio\BO.Exportar.Clientes.pas"/>
     <File Path="persistencia"/>
     <File Path="persistencia\DAO.Base.pas"/>
     <File Path="persistencia\DAO.Cliente.pas"/>
-    <File Path="persistencia\VO.Cliente.pas"/>
+    <File Path="persistencia\Model.Cliente.pas"/>
     <File Path="util"/>
-    <File Path="util\Util.Conexao.ConectarDB.pas"/>
-    <File Path="util\Util.Conexao.Instancia.SQLDataSet.pas"/>
-    <File Path="util\Util.Conexao.SGBD.Firebird.Singleton.pas"/>
+    <File Path="util\helpers"/>
+    <File Path="util\helpers\Helper.Conexao.ConectarDB.pas"/>
+    <File Path="util\helpers\Helper.Conexao.Instancia.SQLDataSet.pas"/>
+    <File Path="util\helpers\Helper.Conexao.SGBD.Firebird.Singleton.pas"/>
     <File Path="util\Util.Constantes.pas"/>
     <File Path="util\Util.Funcoes.pas"/>
+    <File Path="util\Util.RS.pas"/>
+    <File Path="util\Util.Types.pas"/>
   </ProjectSortOrder>
 </BorlandProject>

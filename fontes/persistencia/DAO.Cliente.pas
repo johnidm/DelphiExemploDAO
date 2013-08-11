@@ -10,17 +10,17 @@ interface
 uses
   SqlExpr,
   SysUtils,
-  Util.Conexao.Instancia.SQLDataSet,
-  VO.Cliente,
-  DAO.Base;
+  Model.Cliente,
+  DAO.Base,
+  Iterator.SQL.Select, Util.Funcoes, Util.RS, Builder.SQL.DML;
 
 type
   TDAOCliente = class(TDAOBase)
   public
-    procedure Salvar(const AVOCliente: TVOCliente);
-    procedure Excluir(const AVOCliente: TVOCliente);
-    function Pesquisar(const AID: Integer): TVOCliente;
-    function ListarTodos(): TVOClienteLista;
+    procedure Salvar(const AModelCliente: TModelCliente);
+    procedure Excluir(const AModelCliente: TModelCliente);
+    function Pesquisar(const AID: Integer): TModelCliente;
+    function ListarTodos(): TModelListaCliente;
   end;
 
 implementation
@@ -28,36 +28,43 @@ implementation
 
 { TDAOCliente }
 
-uses Iterator.Select;
 
-procedure TDAOCliente.Excluir(const AVOCliente: TVOCliente);
+
+procedure TDAOCliente.Excluir(const AModelCliente: TModelCliente);
 begin
-  ExecutarComandoSQL('delete from clientes ' +
-    '  where ' +
-    '   id_cliente = ' + IntToStr(AVOCliente.ID)
-  );
+  with TBuilderSQLDMLDelete.Create do
+  begin
+    try
+      DefineTable( 'clientes' );
+      DefineWhere( 'id_cliente', AModelCliente.ID );
+
+      Execute();
+    finally
+      Free;
+    end;
+  end;
 end;
 
 
 
-function TDAOCliente.ListarTodos: TVOClienteLista;
+function TDAOCliente.ListarTodos: TModelListaCliente;
 var
-  Cliente: TVOCliente;
+  Cliente: TModelCliente;
 
   SQL: string;
 begin
-  Result := TVOClienteLista.Create();
+  Result := TModelListaCliente.Create();
 
   SQL:=
     'SELECT id_cliente, nm_cliente ' +
     '  FROM clientes ';
 
-  with ( IIteratorSelect( TIteratorSelect.Iterator( SQL ) ) )  do
+  with ( IIteratorSQLSelect( TIteratorSQLSelect.Iterator( SQL ) ) )  do
   begin
 
     while ( NextEof() ) do
     begin
-      Cliente := TVOCliente.Create();
+      Cliente := TModelCliente.Create();
 
       // Popula a lista de objetos VO
       Cliente.ID := Field('id_cliente').AsInteger;
@@ -72,11 +79,11 @@ end;
 
 
 
-function TDAOCliente.Pesquisar(const AID: Integer): TVOCliente;
+function TDAOCliente.Pesquisar(const AID: Integer): TModelCliente;
 var
   SQL: string;
 begin
-  Result:= TVOCliente.Create();
+  Result:= TModelCliente.Create();
 
   SQL:=
     ' SELECT ' +
@@ -86,7 +93,7 @@ begin
     ' WHERE ' +
     '   id_cliente = ' + IntToStr( AID );
 
-  with ( IIteratorSelect( TIteratorSelect.Iterator( SQL ) ) ) do
+  with ( IIteratorSQLSelect( TIteratorSQLSelect.Iterator( SQL ) ) ) do
   begin
     Result.ID:= Field('id_cliente').AsInteger;
     Result.Nome:= Field('nm_cliente').AsString;
@@ -96,28 +103,37 @@ end;
 
 
 
-procedure TDAOCliente.Salvar(const AVOCliente: TVOCliente);
+procedure TDAOCliente.Salvar(const AModelCliente: TModelCliente);
 begin
-  if ( IIteratorSelect( TIteratorSelect.Iterator( 'select 1 from CLIENTES where id_cliente =  ' + IntToStr( AVOCliente.ID ) ) ) ).IsEmpty then
-    ExecutarComandoSQL(
-      ' INSERT INTO CLIENTES( ' +
-      '     id_cliente,     ' +
-      '     nm_cliente,     ' +
-      '     dt_cadastro     ' +
-      ') VALUES (           ' +
-      '     gen_id( ID_CLIENTE_CLIENTES_GN, 1 ), ' +
-            QuotedStr (AVOCliente.Nome) + ', ' +
-            QuotedStr ('today') +
+  if ( IIteratorSQLSelect( TIteratorSQLSelect.Iterator( 'select 1 from CLIENTES where id_cliente =  ' + IntToStr( AModelCliente.ID ) ) ) ).IsEmpty  then
+  begin
+    with TBuilderSQLDMLInsert.Create do
+    begin
+      try
+        DefineTable( 'clientes' );
+        DefineField( 'id_cliente', AModelCliente.ID );
+        DefineField( 'nm_cliente', AModelCliente.Nome );
 
-      ' ) '
-    )
-  else
-    ExecutarComandoSQL(
-      'UPDATE CLIENTES SET ' +
-      '      nm_cliente = ' + QuotedStr(AVOCliente.Nome) +
-      '  WHERE              ' +
-      '      id_cliente = ' + IntToStr(AVOCliente.ID)
-    );
+        Execute();
+      finally
+        Free;
+      end;
+    end;
+  end else
+  begin
+    with TBuilderSQLDMLUpdate.Create do
+    begin
+      try
+        DefineTable( 'clientes' );
+        DefineField( 'id_cliente', AModelCliente.ID );
+        DefineField( 'nm_cliente', AModelCliente.Nome );
+
+        Execute();
+      finally
+        Free;
+      end;
+    end;
+  end;
 end;
 
 

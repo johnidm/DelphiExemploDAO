@@ -7,12 +7,12 @@ unit BO.Exportar.Clientes;
 
 interface
 
-uses VO.Cliente, BO.Exportar.Clientes.Leiaute;
+uses Model.Cliente, BO.Exportar.Clientes.Leiaute;
 
 type
   TBOExportarClientes = class
   public
-    class procedure Exportar( const AClientes: TVOClienteLista );
+    class procedure Exportar( const AClientes: TModelListaCliente );
   end;
 
 
@@ -20,7 +20,7 @@ implementation
 
 { TBOExportarClientes }
 
-class procedure TBOExportarClientes.Exportar(const AClientes: TVOClienteLista);
+class procedure TBOExportarClientes.Exportar(const AClientes: TModelListaCliente);
 var
   Leiaute: IVersaoLeiaute;
 begin

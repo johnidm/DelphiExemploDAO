@@ -15,6 +15,10 @@ const
   DIR_APLICACAO: string = '';
   {$J-}
 
+  PREFIX_SQL_PARANS = '_'; // prefixo dos paramentros e dos campos
+
+  PREFIX_SQL_FIELD = ':_f_';
+  PREFIX_SQL_WHERE = ':_w_';
 
 
 implementation

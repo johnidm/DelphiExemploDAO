@@ -3,7 +3,10 @@
         <ProjectGuid>{E2F3134B-12EF-4ECE-8558-69E93E096D44}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="OOP.dproj">
+        <Projects Include="OOPProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="test\OOPTests.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -14,23 +17,32 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="OOP">
-        <MSBuild Projects="OOP.dproj"/>
+    <Target Name="OOPProject">
+        <MSBuild Projects="OOPProject.dproj"/>
     </Target>
-    <Target Name="OOP:Clean">
-        <MSBuild Projects="OOP.dproj" Targets="Clean"/>
+    <Target Name="OOPProject:Clean">
+        <MSBuild Projects="OOPProject.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="OOP:Make">
-        <MSBuild Projects="OOP.dproj" Targets="Make"/>
+    <Target Name="OOPProject:Make">
+        <MSBuild Projects="OOPProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OOPTests">
+        <MSBuild Projects="test\OOPTests.dproj"/>
+    </Target>
+    <Target Name="OOPTests:Clean">
+        <MSBuild Projects="test\OOPTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OOPTests:Make">
+        <MSBuild Projects="test\OOPTests.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="OOP"/>
+        <CallTarget Targets="OOPProject;OOPTests"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="OOP:Clean"/>
+        <CallTarget Targets="OOPProject:Clean;OOPTests:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="OOP:Make"/>
+        <CallTarget Targets="OOPProject:Make;OOPTests:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

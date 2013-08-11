@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2013/07/19 22:27:20.000.521,=F:\DelphiExemploDAO\fontes\test\Unit1.pas</Transaction>
+    <Transaction>2013/08/11 16:35:35.000.005,=F:\DelphiExemploDAO\fontes\test\TestParse.SQL.pas</Transaction>
+    <Transaction>2013/08/11 16:37:47.000.018,=F:\DelphiExemploDAO\fontes\framework\Parse.SQL.pas</Transaction>
+    <Transaction>2013/08/11 16:37:56.000.517,=F:\DelphiExemploDAO\fontes\util\Util.Types.pas</Transaction>
+    <Transaction>2013/08/11 16:38:14.000.838,=F:\DelphiExemploDAO\fontes\util\Util.Constantes.pas</Transaction>
+    <Transaction>2013/08/11 17:14:37.000.999,=F:\DelphiExemploDAO\fontes\test\TestBuilder.SQL.pas</Transaction>
+    <Transaction>2013/08/11 17:14:38.000.211,=F:\DelphiExemploDAO\fontes\framework\Builder.SQL.DML.pas</Transaction>
+    <Transaction>2013/08/11 17:15:13.000.076,=F:\DelphiExemploDAO\fontes\framework\RegisterVariable.ConnDB.pas</Transaction>
+    <Transaction>2013/08/11 17:15:33.000.824,=F:\DelphiExemploDAO\fontes\util\Util.RS.pas</Transaction>
+  </Transactions>
+</BorlandProject>

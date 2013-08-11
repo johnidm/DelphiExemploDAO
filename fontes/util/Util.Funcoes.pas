@@ -2,36 +2,18 @@ unit Util.Funcoes;
 
 interface
 
-  function Formatar( const AString: string ): string; overload
-  function Formatar( const AInteger: Integer ): Integer; overload;
-
-  function Formatar( const ACurrency: Currency ): Currency; overload;
-
-  function Formatar( const ADouble: Double ): Double; overload;
+  procedure LancarErro( const AMensagem: string );
 
 implementation
 
+uses
+  System.SysUtils;
 
-function Formatar( const AString: string ): string;
+
+procedure LancarErro( const AMensagem: string );
 begin
-  //
+  raise Exception.Create( AMensagem );
 end;
 
-
-function Formatar( const AInteger: Integer ): Integer; overload;
-begin
-  //
-end;
-
-function Formatar( const ADouble: Double ): Double; overload;
-begin
-  //
-end;
-
-
-function Formatar( const ACurrency: Currency ): Currency; overload;
-begin
-  //
-end;
 
 end.
